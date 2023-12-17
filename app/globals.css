@@ -2,26 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+
+  .theme-blue {
+    --background: 210, 60%, 97%; /* 밝은 파란색의 배경 */
+    --foreground: 210, 100%, 20%; /* 진한 파란색의 텍스트 */
+    --card: 210, 100%, 85%; /* 카드에 사용될 보다 밝은 파란색 */
+    --card-foreground: 210, 100%, 15%; /* 카드 텍스트에 사용될 어두운 파란색 */
+    --primary: 210, 90%, 50%; /* 주요 요소에 사용될 중간 파란색 */
+    --primary-foreground: 210, 20%, 95%; /* 주요 요소 텍스트에 사용될 매우 밝은 파란색 */
+    --secondary: 210, 70%, 80%; /* 보조 요소에 사용될 연한 파란색 */
+    --secondary-foreground: 210, 40%, 30%; /* 보조 요소 텍스트에 사용될 어두운 파란색 */
+    --muted: 210, 20%, 90%; /* 강조가 덜한 텍스트나 요소에 사용될 매우 연한 파란색 */
+    --accent: 195, 100%, 35%; /* 강조를 위한 청록색 계열의 색상 */
+    --border: 210, 50%, 80%; /* 경계선에 사용될 파란색 */
+    --input: 210, 100%, 95%; /* 입력 필드의 배경색 */
+    --ring: 210, 100%, 50%; /* 포커스 링이나 강조 요소에 사용될 색상 */
+    --radius: 0.375rem; /* 요소의 둥근 모서리 정도 */
+  }
+
+  .theme-green {
+    --background: 120, 40%, 95%; /* 밝은 초록색의 배경 */
+    --foreground: 120, 30%, 20%; /* 어두운 초록색의 텍스트 */
+    --card: 120, 35%, 85%; /* 카드에 사용될 연한 초록색 */
+    --card-foreground: 120, 30%, 15%; /* 카드 텍스트에 사용될 더 어두운 초록색 */
+    --popover: 120, 40%, 95%; /* 팝오버에 사용될 밝은 초록색 */
+    --popover-foreground: 120, 30%, 20%; /* 팝오버 텍스트에 사용될 어두운 초록색 */
+    --primary: 130, 40%, 50%; /* 주요 요소에 사용될 중간 정도의 초록색 */
+    --primary-foreground: 130, 20%, 95%; /* 주요 요소 텍스트에 사용될 매우 밝은 초록색 */
+    --secondary: 140, 30%, 80%; /* 보조 요소에 사용될 연한 초록색 */
+    --secondary-foreground: 140, 25%, 25%; /* 보조 요소 텍스트에 사용될 어두운 초록색 */
+    --muted: 120, 20%, 90%; /* 강조가 덜한 텍스트나 요소에 사용될 매우 연한 초록색 */
+    --muted-foreground: 120, 15%, 40%; /* 강조가 덜한 텍스트나 요소의 텍스트 색상 */
+    --accent: 110, 50%, 60%; /* 강조를 위한 밝은 초록색 */
+    --accent-foreground: 110, 25%, 90%; /* 강조 텍스트에 사용될 매우 밝은 초록색 */
+    --destructive: 0, 70%, 40%; /* 위험 또는 경고에 사용될 색상 */
+    --destructive-foreground: 0, 50%, 90%; /* 위험 또는 경고 텍스트 색상 */
+    --border: 120, 25%, 75%; /* 경계선에 사용될 연한 초록색 */
+    --input: 120, 30%, 90%; /* 입력 필드의 배경색 */
+    --ring: 130, 45%, 60%; /* 포커스 링이나 강조 요소에 사용될 색상 */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
