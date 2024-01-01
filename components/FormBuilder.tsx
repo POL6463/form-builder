@@ -44,6 +44,7 @@ function FormBuilder({ form }: { form: Form }) {
 
   useEffect(() => {
     if (isReady) return;
+    console.log("LOG", form.content);
     const elements = JSON.parse(form.content);
     setElements(elements);
     const readyTimeout = setTimeout(() => setIsReady(true), 500);
